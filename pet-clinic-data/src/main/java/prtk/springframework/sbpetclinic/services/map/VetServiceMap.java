@@ -1,12 +1,11 @@
 package prtk.springframework.sbpetclinic.services.map;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
 import prtk.springframework.sbpetclinic.model.Vet;
-import prtk.springframework.sbpetclinic.services.CrudService;
+import prtk.springframework.sbpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap  extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap  extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
