@@ -1,7 +1,6 @@
 package prtk.springframework.sbpetclinic.services.map;
 
 import prtk.springframework.sbpetclinic.model.Pet;
-import prtk.springframework.sbpetclinic.services.CrudService;
 import prtk.springframework.sbpetclinic.services.PetService;
 
 import java.util.Set;
