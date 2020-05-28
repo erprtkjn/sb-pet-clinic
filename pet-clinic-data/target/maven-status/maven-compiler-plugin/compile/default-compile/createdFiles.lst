@@ -1,0 +1,14 @@
+prtk\springframework\sbpetclinic\model\Pet.class
+prtk\springframework\sbpetclinic\model\BaseEntity.class
+prtk\springframework\sbpetclinic\model\PetType.class
+prtk\springframework\sbpetclinic\services\PetService.class
+prtk\springframework\sbpetclinic\model\Person.class
+prtk\springframework\sbpetclinic\model\Owner.class
+prtk\springframework\sbpetclinic\model\Vet.class
+prtk\springframework\sbpetclinic\services\VetService.class
+prtk\springframework\sbpetclinic\services\map\AbstractMapService.class
+prtk\springframework\sbpetclinic\services\map\OwnerServiceMap.class
+prtk\springframework\sbpetclinic\services\map\PetServiceMap.class
+prtk\springframework\sbpetclinic\services\OwnerService.class
+prtk\springframework\sbpetclinic\services\CrudService.class
+prtk\springframework\sbpetclinic\services\map\VetServiceMap.class
