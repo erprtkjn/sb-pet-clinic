@@ -9,6 +9,7 @@ import prtk.springframework.sbpetclinic.services.PetService;
 import prtk.springframework.sbpetclinic.services.PetTypeService;
 
 import java.util.Set;
+import java.util.function.Predicate;
 
 @Service
 @Profile({"default", "map"})
@@ -36,26 +37,28 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public Owner save(Owner object) {
 
         if(object != null){
-            if(object.getPets() != null){
+            if (object.getPets() != null) {
                 object.getPets().forEach(pet -> {
-                    if(pet.getPetType() != null){
+                    if (pet.getPetType() != null){
                         if(pet.getPetType().getId() == null){
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
-                    }else {
-                        throw new RuntimeException("Pet type is required!!!");
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
                     }
+
                     if(pet.getId() == null){
                         Pet savedPet = petService.save(pet);
                         pet.setId(savedPet.getId());
                     }
                 });
             }
+
             return super.save(object);
-        }else{
+
+        } else {
             return null;
         }
-
 
     }
 
@@ -71,6 +74,14 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(isLastNameEqual(lastName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    Predicate<Owner> isLastNameEqual(String lName) {
+        return p -> p.getLastName().equalsIgnoreCase(lName);
     }
 }
