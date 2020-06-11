@@ -8,6 +8,7 @@ import prtk.springframework.sbpetclinic.services.OwnerService;
 import prtk.springframework.sbpetclinic.services.PetService;
 import prtk.springframework.sbpetclinic.services.PetTypeService;
 
+import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
@@ -83,5 +84,12 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     Predicate<Owner> isLastNameEqual(String lName) {
         return p -> p.getLastName().equalsIgnoreCase(lName);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+
+        //todo - impl
+        return null;
     }
 }
