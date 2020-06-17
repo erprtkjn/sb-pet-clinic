@@ -32,23 +32,3 @@ public class VetController {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
